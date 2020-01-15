@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>成人之礼</title>
+        <style>
+            *{margin:0;padding:0;}
+            body{background: black;}
+            #div1{width:150px; height: 200px; background: burlywood;position: absolute; left:-150px; top:550px;}
+            #div1 span{position: absolute; width:20px; height:60px; line-height: 20px; background:brown; right: -20px;top:50px;} 
+            #div2 div{position: relative;}
+            #div2{height: 40px;width:1300px;/*border:1px solid black;*/margin: auto;font: size 12px;font-family:fantasy;color: white;}
+            #div2 a{color: whitesmoke;}
+            #txt1{width:500px;height: 25px;margin-left:20px;margin-top: 3px;font-size: small;}
+            .size1{margin:5px;padding-left: 10px;width: 40px;height: 30px;float:left;}
+            .size2{margin:5px;width: 80px;height: 30px;float:right;/*background: blanchedalmond;*/}
+            #div3 {width:1300px;height:1px;margin: auto;left:auto;background:  black;}
+            #img1{position:absolute;top:190px;width:300px;height: 500px;left:60px;}
+            .font-size1{font-size: 80px;color: red;}
+            #div4 img{width:300px;height: 300px;position: relative;float: right;margin: 5px;right:200px;}
+            .font2{float: left;position: relative;font-size: 80px;color: red;left:560px;top:320px;padding: 30px;font-weight: 300;width: 300px;}
+            .font3{float: left;position: absolute;font-size: 80px;color: red;left:1000px;top:470px;padding: 30px;font-weight: 300;width: 300px;}
+            #img2{position: absolute;top:330px;left:380px;width:200px;height: 200px;}
+        </style>
+        <script>
+      
+         window.onload=function()
+         {
+             var odiv1=document.getElementById('div1');
+             
+             odiv1.onmouseover=function()
+             {
+                 startmove1(10,0);
+             }
+             odiv1.onmouseout=function()
+             {
+                 startmove1(-10,-150);
+             }
+
+              var timer1=null;
+             function startmove1(speed,itarget)
+             {
+                var odiv1=document.getElementById('div1');
+                
+                clearInterval(timer1);
+                timer1=setInterval(function()
+                {
+                    if(odiv1.offsetLeft==itarget)
+                    {
+                      clearInterval(timer1);
+                    }
+                    else
+                    {
+                        odiv1.style.left=odiv1.offsetLeft+speed+'px';
+                    }
+                },30)          
+             
+             }               
+         }
+        </script>
+    </head>
+    <body>
+        <div id="div2" >           
+            <div class="size1"><a href="#">主页</a></div>
+            <input id="txt1" type="text" placeholder="少年的你" />
+            <input type="button" value="搜索"/>
+            <div class="size2"><a href="#">玊尔</a></div>
+            <div class="size2"><a href="#">燚</a></div>
+        </div>
+        <div id="div3" style="z-index: 2;"></div>
+        <div id="div1" style="font-size:16px; text-align:center;float:left;position:relative;z-index: 2;">
+            <a href="https://passport.weibo.com/wbsso/logout?r=https%3A%2F%2Fweibo.com&returntype=1" target="_blank">微博</a><br>       
+            <a href="https://qzone.qq.com" target="_blank">QQ</a><br>
+            <a href="">微信</a><br>
+            <a href="">Facebook</a><br>
+            <a href="">邮箱</a><br>
+            <span >分享到</span>
+        </div>
+    </body>
+    <body>
+       <div class="font-size1">燚</div>
+       <div id="div4">
+        <img src="05.jpeg">
+        <img src="06.jpeg">
+    </div>
+       <div><img src="00.jpeg" id="img1" ></div>
+       <div class="font2">
+          <div>成</div>
+          <div>年</div> 
+       </div>
+       <div class="font3">
+           <div>之</div>
+           <div>礼</div>
+       </div>
+       <div><img src="08.jpeg" id="img2"></div>
+    </body>
+</html>
